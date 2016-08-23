@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Inventory Example</title>
+    <script src="inventory.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h2>Inventory Example</h2>
+    <select id='sizeIn' onChange="searchInventory()">
+      <option>Small</option>
+      <option>Medium</option>
+      <option>Large</option>
+    </select>
+    <select id='colorIn' onChange="searchInventory()">
+      <option>black</option>
+      <option>blue</option>
+      <option>bus seat green</option>
+      <option>emerald green</option>
+      <option>fuchsia</option>
+      <option>mermaid treasure</option>
+      <option>orange</option>
+      <option>purple</option>
+      <option>red</option>
+      <option>storm cloud</option>
+      <option>yellow, canary</option>
+    </select>
+    <h2>Items that Match</h2>
+    <ul id="items">
+      
+    </ul>
+  </body>
+</html>
