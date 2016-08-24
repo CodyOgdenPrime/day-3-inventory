@@ -20,18 +20,35 @@ var addItem = function( color, name, size ){
 
 var addItemFromUser = function ( ) {
   console.log( "in addItemFromUser" );
+  // Let's setup some variables
   theName = document.getElementById( 'nameInput' );
   theColor = document.getElementById( 'colorInput' );
   theSize = document.getElementById( 'sizeInput' );
+  // The message box
   messageBox = document.getElementById( 'productAddedMessage' );
+
+  // If all the fields pass a simple validation ( must have all necessary values )
   if( theName.value != "" && theColor.value != "--" && theSize.value != "--" ) {
+
+    // Add the item
     addItem( theColor.value, theName.value, theSize.value );
-    document.getElementById( 'nameInput' ).value = "";
-    document.getElementById( 'sizeInput' ).value = "--";
-    document.getElementById( 'colorInput' ).value = "--";
-    messageBox.innerHTML = "Product Added!";
+
+    // Reset the form
+    theName.value = "";
+    theSize.value = "--";
+    theColor.value = "--";
+
+    // Add a message to let the user know the item was added
+    messageBox.innerHTML += "Product Added!";
+
+    //Set a timeout to clear the message after two seconds
     setTimeout(function(){ messageBox.innerHTML = ""; }, 2000);
+
+    // This ensures the form doesn't server submit
+    return false;
+
   } else {
+    // Alert the user to let them know that the product is not added, need more fields
     alert("All fields are required!!");
     return false;
   }
