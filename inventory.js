@@ -40,14 +40,23 @@ var addItemFromUser = function ( ) {
 var findItems = function( size, color, name ) {
 	// Create items array
 	var items = [];
+
+  console.log( size );
 	// Search through all the items in our inventory
 	for ( var i = 0; i < inventory.length; i++ ) {
 		// If the item is a match, add it to the items array
     var productName = inventory[i].name + "";
-		if ( ( inventory[i].size === size && inventory[i].color === color ) || productName.toLowerCase() === name.toLowerCase() ) {
-			items.push( inventory[i] );
-		}
-	}
+
+    if( size == "--" || color == "--" ) {
+      if ( ( inventory[i].size === size || inventory[i].color === color ) || productName.toLowerCase() === name.toLowerCase() )
+        items.push( inventory[i] );
+      } else {
+        if ( ( inventory[i].size === size && inventory[i].color === color ) || productName.toLowerCase() === name.toLowerCase() ) {
+          items.push( inventory[i] );
+        }
+      }
+  }
+
 	return items;
 }
 

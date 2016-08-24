@@ -11,6 +11,6 @@ X handshake between js and html (sourcing inventory.js)
 X get user selection on button click (onClick tag on button element in HTML that runs a function in JS)
 X select size (select element with options within)
 X select color
-search by size
-search by color
-search by both size and color
+X search by size
+X search by color
+X search by both size and color
