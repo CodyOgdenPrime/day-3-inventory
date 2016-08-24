@@ -8,11 +8,13 @@
   <body>
     <h2>Inventory Example</h2>
     <select id='sizeIn' onChange="searchInventory()">
+      <option>--</option>
       <option>Small</option>
       <option>Medium</option>
       <option>Large</option>
     </select>
     <select id='colorIn' onChange="searchInventory()">
+      <option>--</option>
       <option>black</option>
       <option>blue</option>
       <option>bus seat green</option>
@@ -24,10 +26,37 @@
       <option>red</option>
       <option>storm cloud</option>
       <option>yellow, canary</option>
-    </select>
+    </select>&nbsp;OR&nbsp;
+    <input type="text" id="nameIn" placeholder="Search Products..." onChange="searchInventory()" />
+    <input type="button" value="search" onClick="searchInventory();" />
     <h2>Items that Match</h2>
     <ul id="items">
       
     </ul>
+    <hr />
+    <h2>Add An Item</h2>
+      <select id='sizeInput'>
+        <option disabeld selected>--</option>
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select>
+      <select id='colorInput'>
+        <option disabeld selected>--</option>
+        <option>black</option>
+        <option>blue</option>
+        <option>bus seat green</option>
+        <option>emerald green</option>
+        <option>fuchsia</option>
+        <option>mermaid treasure</option>
+        <option>orange</option>
+        <option>purple</option>
+        <option>red</option>
+        <option>storm cloud</option>
+        <option>yellow, canary</option>
+      </select>&nbsp;OR&nbsp;
+      <input type="text" id="nameInput" placeholder="Add Product Name" />
+      <input type="button" value="Add Product" onclick="addItemFromUser();" />
+    <div id="productAddedMessage"></div>
   </body>
 </html>
